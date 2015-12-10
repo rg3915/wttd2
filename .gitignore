@@ -57,6 +57,7 @@ docs/_build/
 target/
 
 *.sqlite3
+*.env
 
 .wttd2/
 perguntas_e_respostas

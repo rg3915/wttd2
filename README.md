@@ -11,4 +11,4 @@ Alguns exercícios de Python encontram-se [aqui][3].
 
 [0]: www.welcometothedjango.com.br
 [1]: henriquebastos.net
-[3]: 
+[3]: https://github.com/rg3915/wttd2/tree/master/python_ex
