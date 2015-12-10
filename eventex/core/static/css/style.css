@@ -1,0 +1,14 @@
+/*--------------------
+4.5. Partners Slider
+--------------------*/
+
+.partner-logo {
+    height: 120px;
+    text-align: center;
+}
+
+.partner-logo img {
+    height: 100%;
+    width: auto !important;
+}
+
