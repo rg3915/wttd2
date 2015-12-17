@@ -58,6 +58,7 @@ target/
 
 *.sqlite3
 *.env
+*.DS_Store
 
 .wttd2/
 perguntas_e_respostas

@@ -628,7 +628,7 @@
 								<div class="input-field">
 									<textarea name="message" class="form-control" placeholder="Mensagem..."></textarea>
 								</div>
-						       	<button type="submit" id="submit" class="btn btn-blue btn-effect">Enviar</button>
+						       	<button type="submit" id="submit" class="btn btn-blue btn-effect" data-toggle="modal" data-target="#myModalMessage">Enviar</button>
 							</form>
 						</div>
 						
@@ -675,12 +675,13 @@
 					<form action="{% url 'subscribe' %}" method="POST" class="subscribe-form wow animated fadeInUp">
 						<div class="input-field">
 							{% csrf_token %}
-							<input name="from_email" type="email" class="subscribe form-control" placeholder="Seu Email...">
-							<button type="submit" class="submit-icon">
-								<i class="fa fa-paper-plane fa-lg"></i>
-							</button>
-						</div>
-					</form>
+                            <input name="from_email" type="email" class="subscribe form-control" placeholder="Seu Email...">
+                            <!-- Button trigger modal -->
+                            <button type="submit" class="submit-icon" data-toggle="modal" data-target="#myModal">
+                                <i class="fa fa-paper-plane fa-lg"></i>
+                            </button>
+                        </div>
+                    </form>
 					<div class="footer-social">
 						<ul>
 							<li class="wow animated zoomIn"><a href="https://www.facebook.com"><i class="fa fa-facebook fa-3x"></i></a></li>
@@ -696,7 +697,44 @@
 				</div>
 			</div>
 		</footer>
-		
+
+    <!-- Modal Message -->
+    <div class="modal fade" id="myModalMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabelMessage">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Eventex.</h4>
+          </div>
+          <div class="modal-body">
+            <p>Mensagem enviada com sucesso.</p>
+            <p>Em breve entraremos em contato.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Subscribe -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Bem vindo ao Eventex.</h4>
+          </div>
+          <div class="modal-body">
+            <p>Inscrição realizada com sucesso.</p>
+            <p>Verifique no seu e-mail a sua inscrição para o Eventex.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 		<!-- Essential jQuery Plugins
 		================================================== -->
 		<!-- Main jQuery -->
