@@ -614,8 +614,7 @@
 						
 						
 						<div class="col-md-7 contact-form wow animated fadeInLeft">
-							<form action="{% url 'sendemail' %}" method="post">
-								{% csrf_token %}
+							<!-- <form action="." method="post"> -->
 								<div class="input-field">
 									<input type="text" name="name" class="form-control" placeholder="Seu Nome...">
 								</div>
@@ -629,7 +628,7 @@
 									<textarea name="message" class="form-control" placeholder="Mensagem..."></textarea>
 								</div>
 						       	<button type="submit" id="submit" class="btn btn-blue btn-effect" data-toggle="modal" data-target="#myModalMessage">Enviar</button>
-							</form>
+							<!-- </form> -->
 						</div>
 						
 						<div class="col-md-5 wow animated fadeInRight">
@@ -672,7 +671,7 @@
 						<p>Novidades</p>
 						<p>Receba notícias sobre os próximos eventos!</p>
 					</div>
-					<form action="{% url 'subscribe' %}" method="POST" class="subscribe-form wow animated fadeInUp">
+					<form action="." method="POST" class="subscribe-form wow animated fadeInUp">
 						<div class="input-field">
 							{% csrf_token %}
                             <input name="from_email" type="email" class="subscribe form-control" placeholder="Seu Email...">
@@ -706,8 +705,8 @@
             <h4 class="modal-title">Eventex.</h4>
           </div>
           <div class="modal-body">
-            <p>Mensagem enviada com sucesso.</p>
-            <p>Em breve entraremos em contato.</p>
+            <p>O envio de mensagens está temporariamente desativado.</p>
+            <p>Desculpe o transtorno.</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
@@ -725,7 +724,6 @@
           </div>
           <div class="modal-body">
             <p>Inscrição realizada com sucesso.</p>
-            <p>Verifique no seu e-mail a sua inscrição para o Eventex.</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
