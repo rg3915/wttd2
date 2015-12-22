@@ -28,17 +28,29 @@ def donuts(count):
     return ('{}{}'.format(s, 'many')) if count >= 10 else ('{}{}'.format(s, str(count)))
 
 
+def donuts(count):
+    msg = 'Number of donuts: '
+    if count < 10:
+        qty = str(count)
+    else:
+        qty = 'many'
+    return msg + qty
+
+
+def donuts(count):
+    values = {n: str(n) for n in range(1, 10)}
+    return 'Number of donuts: ' + values.get(count, 'many')
+
+
 # B. both_ends
 # Given a string s, return a string made of the first 2
 # and the last 2 chars of the original string,
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
-def both_ends(s):
-    ss = s[:2] + s[-2:]
-    if len(s) < 2:
-        ss = ''
-    return ss
 
+
+def both_ends(s):
+    return '' if len(s) < 2 else s[:2] + s[-2:]
 
 # C. fix_start
 # Given a string s, return a string
@@ -49,8 +61,16 @@ def both_ends(s):
 # Assume that the string is length 1 or more.
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
+
+
 def fix_start(s):
     return s[0] + s[1:].replace(s[0], '*')
+
+
+def fix_start(s):
+    head, tail = s[0], s[1:]
+    return head + tail.replace(head, '*')
+
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated
