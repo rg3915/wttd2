@@ -119,7 +119,7 @@
                             <div class="caption-content">
                                 <h2 class="animated fadeInDown">Bem vindo ao Eventex!</h2>
                                 <span class="animated fadeInDown">Prazer em conhecê-lo</span>
-                                <a href="#footer" class="btn btn-blue btn-effect">Junte-se a nós</a>
+                                <a href="{% url 'subscribe' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
                             </div>
                         </div>
 						
@@ -132,7 +132,7 @@
                             <div class="caption-content">
                                 <h2>Eventex</h2>
                                 <span>Conheça os maiores eventos do Brasil</span>
-                                <a href="#footer" class="btn btn-blue btn-effect">Junte-se a nós</a>
+                                <a href="{% url 'subscribe' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
                             </div>
                         </div>
 						
@@ -145,7 +145,7 @@
                             <div class="caption-content">
                                 <h2>Supreenda-se</h2>
                                 <span>Surpreenda-se com nossas instalações.</span>
-                                <a href="#footer" class="btn btn-blue btn-effect">Junte-se a nós</a>
+                                <a href="{% url 'subscribe' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
                             </div>
                         </div>
 
@@ -158,7 +158,7 @@
                             <div class="caption-content">
                                 <h2>Ambientes para todos os gostos</h2>
                                 <span>Temos salas equipadas com todos os recursos tecnológicos.</span>
-                                <a href="#footer" class="btn btn-blue btn-effect">Junte-se a nós</a>
+                                <a href="{% url 'subscribe' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
                             </div>
                         </div>
 
@@ -171,7 +171,7 @@
                             <div class="caption-content">
                                 <h2>Sinta-se em casa</h2>
                                 <span>Queremos que você se sinta em casa, totalmente confortável.</span>
-                                <a href="#footer" class="btn btn-blue btn-effect">Junte-se a nós</a>
+                                <a href="{% url 'subscribe' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
                             </div>
                         </div>
 
@@ -184,7 +184,7 @@
                             <div class="caption-content">
                                 <h2>Você Satisfeito</h2>
                                 <span>Nós sempre nos preocupamos com você</span>
-                                <a href="#footer" class="btn btn-blue btn-effect">Junte-se a nós</a>
+                                <a href="{% url 'subscribe' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
                             </div>
                         </div>
 
@@ -251,7 +251,7 @@
                                     Reunindo profissionais e entusiastas dos quatro cantos do planeta,
                                     o Eventex é o lugar onde você precisa estar.</p>
 						     	 </div>
-						       	<a href="#footer" class="btn btn-border btn-effect pull-right">Garanta sua vaga!</a>
+						       	<a href="{% url 'subscribe' %}" class="btn btn-border btn-effect pull-right">Garanta sua vaga!</a>
 						    </div>
 						</div>
 					</div>
@@ -674,19 +674,20 @@
 			<div class="row text-center">
 				<div class="footer-content">
 					<div class="wow animated fadeInDown">
-						<p>Novidades</p>
-						<p>Receba notícias sobre os próximos eventos!</p>
+						<!-- <p>Inscrição</p> -->
+						<!-- <p>Receba notícias sobre os próximos eventos!</p> -->
 					</div>
-					<form action="." method="POST" class="subscribe-form wow animated fadeInUp">
+                    <a href="{% url 'subscribe' %}" class="btn btn-blue btn-effect">Inscrição</a>
+					<!-- <form action="." method="POST" class="subscribe-form wow animated fadeInUp">
 						<div class="input-field">
 							{% csrf_token %}
-                            <input name="from_email" type="email" class="subscribe form-control" placeholder="Seu Email...">
+                            <input name="from_email" type="email" class="subscribe form-control" placeholder="Seu Email..."> -->
                             <!-- Button trigger modal -->
-                            <button type="submit" class="submit-icon" data-toggle="modal" data-target="#myModal">
+                            <!-- <button type="submit" class="submit-icon" data-toggle="modal" data-target="#myModal">
                                 <i class="fa fa-paper-plane fa-lg"></i>
                             </button>
                         </div>
-                    </form>
+                    </form> -->
 					<div class="footer-social">
 						<ul>
 							<li class="wow animated zoomIn"><a href="https://www.facebook.com"><i class="fa fa-facebook fa-3x"></i></a></li>
