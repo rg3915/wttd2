@@ -34,9 +34,9 @@ Então eu criei [gen_random_values.py][6]
 
 Para gerar dados randômicos, que estamos usando junto com o selenium.
 
-[1]: 
-[2]: 
+[1]: https://github.com/rg3915/wttd2/blob/master/eventex/subscriptions/tests/selenium/selenium_subscription.py
+[2]: https://github.com/rg3915/wttd2/blob/master/Makefile
 [3]: https://pypi.python.org/pypi/names/
 [4]: https://pypi.python.org/pypi/rstr/2.1.3
 [5]: https://gist.github.com/rg3915/744aacde209046901748
-[6]: 
+[6]: https://github.com/rg3915/wttd2/blob/master/fixtures/gen_random_values.py

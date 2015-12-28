@@ -9,6 +9,11 @@ O objetivo é criar um site de eventos usando todos os recursos aprendidos duran
 Alguns exercícios de Python encontram-se [aqui][3].
 
 
+## Testes com Selenium
+
+[aqui][4]
+
 [0]: www.welcometothedjango.com.br
 [1]: henriquebastos.net
 [3]: https://github.com/rg3915/wttd2/tree/master/python_ex
+[4]: https://github.com/rg3915/wttd2/blob/master/selenium.md
