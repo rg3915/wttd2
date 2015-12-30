@@ -2,7 +2,6 @@
 import datetime
 import re
 import urllib.request as urllib2
-from lxml import etree
 
 url = 'http://www.sat.gob.mx/informacion_fiscal/tablas_indicadores/Paginas/tipo_cambio.aspx'
 day = datetime.date.today().day
