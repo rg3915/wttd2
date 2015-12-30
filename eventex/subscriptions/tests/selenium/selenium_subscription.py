@@ -14,7 +14,7 @@ name = '{} {}'.format(first_name, last_name)
 email = '{}.{}@example.com'.format(first_name[0].lower(), last_name.lower())
 
 
-page = webdriver.Firefox()
+page = webdriver.Chrome(executable_path='/home/rg3915/Downloads/chromedriver')
 page.get('http://localhost:8000/inscricao/')
 
 
@@ -36,3 +36,5 @@ time.sleep(2)
 
 button = page.find_element_by_id('id_submit')
 button.click()
+
+# page.quit()
