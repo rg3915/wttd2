@@ -22,14 +22,14 @@ git clone https://github.com/rg3915/wttd2.git
 cd wttd2
 python -m venv .wttd2
 source .wttd2/bin/activate # Linux
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 cp contrib/env-sample .env
 python manage.py test
 ```
 
 ## Testes com Selenium
 
-[aqui][4]
+Leia [aqui][4].
 
 ## Como fazer o deploy?
 
@@ -40,7 +40,7 @@ python manage.py test
 5. Configure o serviço de email.
 6. Envie o código para o Heroku.
 
-```console
+```bash
 heroku create minhainstancia
 heroku config:push
 heroku config:set SECRET_KEY=`python contrib/secret_gen.py`
