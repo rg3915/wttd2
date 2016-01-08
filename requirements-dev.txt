@@ -1,5 +1,6 @@
 -r requirements.txt
 django-extensions==1.6.1
+django-test-without-migrations==0.4
 ipython[notebook]
 names==0.3.0
 rstr==2.2.3
