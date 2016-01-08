@@ -7,6 +7,10 @@ def home(request):
     return render(request, 'index.html')
 
 
+def bubble(request):
+    return render(request, 'bubble.html')
+
+
 def subscribe(request):
     if request.method == 'POST':
         from_email = request.POST.get('from_email', '')

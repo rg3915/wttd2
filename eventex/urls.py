@@ -5,6 +5,7 @@ import eventex.subscriptions.views as s
 
 urlpatterns = [
     url(r'^$', v.home, name='home'),
+    url(r'^bubble/$', v.bubble, name='bubble'),
     url(r'^email/$', v.sendemail, name='sendemail'),
     url(r'^inscricao/$', s.subscribe, name='subscribe'),
 
