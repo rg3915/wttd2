@@ -8,10 +8,46 @@ O objetivo é criar um site de eventos usando todos os recursos aprendidos duran
 
 Alguns exercícios de Python encontram-se [aqui][3].
 
+## Como desenvolver?
+
+1. Clone o repositório.
+2. Crie um virtualenv com Python 3.5
+3. Ative o virtualenv.
+4. Instale as dependências.
+5. Configure a instância com o .env
+6. Execute os testes.
+
+```bash
+git clone https://github.com/rg3915/wttd2.git
+cd wttd2
+python -m venv .wttd2
+source .wttd2/bin/activate # Linux
+pip install -r requirements.txt
+cp contrib/env-sample .env
+python manage.py test
+```
 
 ## Testes com Selenium
 
 [aqui][4]
+
+## Como fazer o deploy?
+
+1. Crie uma instância no Heroku.
+2. Envie as configurações para o Heroku.
+3. Defina uma SECRET_KEY segura para a instância.
+4. Defina DEBUG=False
+5. Configure o serviço de email.
+6. Envie o código para o Heroku.
+
+```console
+heroku create minhainstancia
+heroku config:push
+heroku config:set SECRET_KEY=`python contrib/secret_gen.py`
+heroku config:set DEBUG=False
+# configure o e-mail
+git push heroku master --force
+```
 
 [0]: www.welcometothedjango.com.br
 [1]: henriquebastos.net
