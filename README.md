@@ -10,6 +10,15 @@ Alguns exercícios de Python encontram-se [aqui][3].
 
 ## Como desenvolver?
 
+Baixe e rode o `setup.sh`.
+
+```
+wget https://raw.githubusercontent.com/rg3915/wttd2/master/setup.sh
+source setup.sh
+```
+
+Ou siga o passo a passo.
+
 1. Clone o repositório.
 2. Crie um virtualenv com Python 3.5
 3. Ative o virtualenv.
