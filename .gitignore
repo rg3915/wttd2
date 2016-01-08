@@ -63,3 +63,4 @@ target/
 .wttd2/
 perguntas_e_respostas
 staticfiles/
+.ipynb_checkpoints/

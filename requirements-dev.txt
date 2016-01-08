@@ -1,2 +1,6 @@
 -r requirements.txt
+django-extensions==1.6.1
 ipython[notebook]
+names==0.3.0
+rstr==2.2.3
+selenium==2.48.0
