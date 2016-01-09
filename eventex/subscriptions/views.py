@@ -38,8 +38,13 @@ def new(request):
 
 
 def detail(request):
-    from django.http import HttpResponse
-    return HttpResponse()
+    subscription = Subscription(
+        name='Regis da Silva',
+        cpf='12345678901',
+        email='regis@example.com',
+        phone='11 91234-5678',
+    )
+    return render(request, 'subscriptions/subscription_detail.html', {'subscription': subscription})
 
 
 def _send_mail(subject, from_, to, template_name, context):
