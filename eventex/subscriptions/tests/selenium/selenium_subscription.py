@@ -20,21 +20,21 @@ page.get('http://localhost:8000/inscricao/')
 
 search = page.find_element_by_id('id_name')
 search.send_keys(name)
-time.sleep(1)
+# time.sleep(1)
 
 search = page.find_element_by_id('id_cpf')
 search.send_keys(gen_doc())
-time.sleep(1)
+# time.sleep(1)
 
 search = page.find_element_by_id('id_email')
 search.send_keys(email)
-time.sleep(1)
+# time.sleep(1)
 
 search = page.find_element_by_id('id_phone')
 search.send_keys(gen_phone())
-time.sleep(2)
+# time.sleep(2)
 
 button = page.find_element_by_id('id_submit')
 button.click()
 
-# page.quit()
+page.quit()
