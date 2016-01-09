@@ -2,6 +2,9 @@ migrate:
 	python manage.py makemigrations
 	python manage.py migrate
 
+createuser:
+	python manage.py createsuperuser --username='admin' --email=''
+
 test:
 	python manage.py test -n
 

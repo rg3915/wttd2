@@ -1,4 +1,9 @@
+import uuid
 from django.db import models
+
+
+def _createHash():
+    return str(uuid.uuid4())
 
 
 class Subscription(models.Model):
@@ -6,6 +11,7 @@ class Subscription(models.Model):
     cpf = models.CharField('CPF', max_length=11)
     email = models.EmailField('e-mail')
     phone = models.CharField('telefone', max_length=20)
+    uuid = models.UUIDField(unique=True, editable=False, default=_createHash)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
 
     class Meta:

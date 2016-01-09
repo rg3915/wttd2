@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^email/$', v.sendemail, name='sendemail'),
 
     url(r'^inscricao/$', s.subscribe, name='subscribe'),
-    url(r'^inscricao/(\d+)/$', s.detail, name='detail'),
+    url(r'^inscricao/(?P<uuid>[\w-]+)/$', s.detail, name='detail'),
 
     url(r'^admin/', admin.site.urls),
 ]

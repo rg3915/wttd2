@@ -44,6 +44,7 @@ class SubscribePostValid(TestCase):
 
     def setUp(self):
         data = dict(
+            uuid='932909e8-79de-4163-9134-acbd56ced2a7',
             name='Regis da Silva',
             cpf='12345678901',
             email='regis@example.com',
@@ -51,8 +52,9 @@ class SubscribePostValid(TestCase):
         self.resp = self.client.post('/inscricao/', data)
 
     def test_post(self):
-        ''' Valid POST should redirect to /inscricao/1/ '''
-        self.assertRedirects(self.resp, '/inscricao/1/')
+        ''' Valid POST should redirect to /inscricao/932909e8-79de-4163-9134-acbd56ced2a7/ '''
+        self.assertRedirects(
+            self.resp, '/inscricao/932909e8-79de-4163-9134-acbd56ced2a7/')
 
     def test_send_subscribe_email(self):
         self.assertEqual(1, len(mail.outbox))
