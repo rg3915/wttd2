@@ -47,8 +47,7 @@ class SubscribePostValid(TestCase):
             name='Regis da Silva',
             cpf='12345678901',
             email='regis@example.com',
-            phone='11 91234-5678',
-        )
+            phone='11 91234-5678')
         self.resp = self.client.post('/inscricao/', data)
 
     def test_post(self):

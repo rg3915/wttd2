@@ -7,8 +7,9 @@ urlpatterns = [
     url(r'^$', v.home, name='home'),
     url(r'^bubble/$', v.bubble, name='bubble'),
     url(r'^email/$', v.sendemail, name='sendemail'),
+
     url(r'^inscricao/$', s.subscribe, name='subscribe'),
-    url(r'^inscricao/1/$', s.detail, name='detail'),
+    url(r'^inscricao/(\d+)/$', s.detail, name='detail'),
 
     url(r'^admin/', admin.site.urls),
 ]

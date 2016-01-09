@@ -5,7 +5,12 @@ from eventex.subscriptions.models import Subscription
 class SubscriptionDetailGet(TestCase):
 
     def setUp(self):
-        self.resp = self.client.get('/inscricao/1/')
+        self.obj = Subscription.objects.create(
+            name='Regis da Silva',
+            cpf='12345678901',
+            email='regis@example.com',
+            phone='11 91234-5678',)
+        self.resp = self.client.get('/inscricao/{}/'.format(self.obj.pk))
 
     def test_get(self):
         self.assertEqual(200, self.resp.status_code)
@@ -19,7 +24,16 @@ class SubscriptionDetailGet(TestCase):
         self.assertIsInstance(subscription, Subscription)
 
     def test_html(self):
-        self.assertContains(self.resp, 'Regis da Silva')
-        self.assertContains(self.resp, '12345678901')
-        self.assertContains(self.resp, 'regis@example.com')
-        self.assertContains(self.resp, '11 91234-5678')
+        contents = (self.obj.name, self.obj.cpf,
+                    self.obj.email, self.obj.phone,)
+
+        with self.subTest():
+            for expected in contents:
+                self.assertContains(self.resp, expected)
+
+
+class SubscriptionDetailNotFound(TestCase):
+
+    def test_not_found(self):
+        resp = self.client.get('/inscricao/0/')
+        self.assertEqual(404, resp.status_code)

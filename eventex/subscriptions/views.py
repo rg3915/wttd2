@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.core import mail
 from django.shortcuts import render
 from django.template.loader import render_to_string
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
 
@@ -37,13 +37,12 @@ def new(request):
     return render(request, 'subscriptions/subscription_form.html', {'form': SubscriptionForm()})
 
 
-def detail(request):
-    subscription = Subscription(
-        name='Regis da Silva',
-        cpf='12345678901',
-        email='regis@example.com',
-        phone='11 91234-5678',
-    )
+def detail(request, pk):
+    try:
+        subscription = Subscription.objects.get(pk=pk)
+    except Subscription.DoesNotExist:
+        raise Http404
+
     return render(request, 'subscriptions/subscription_detail.html', {'subscription': subscription})
 
 
