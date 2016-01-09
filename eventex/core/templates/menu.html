@@ -2,7 +2,7 @@
     <header class="header header-inline min-h-3 row desktop-12 container" role="banner">
 
         <div class="site-logo">
-            <h1><a href="/" rel="home">Eventex</h1>
+            <h1><a href="{% url 'core:home' %}" rel="home">Eventex</h1>
             <p class="site-description screen-reader-only">O maior encontro hacker do mundo!</p>
         </div>
 
@@ -13,7 +13,7 @@
                 <li><a data-scroll href="/#sponsor">Patrocinadores</a></li>
                 <li><a data-scroll href="/#contact">Contato</a></li>
                 <li><a data-scroll href="/#google-map">Local</a></li>
-                <li><a data-scroll href="#">Inscrição</a></li>
+                <li><a data-scroll href="{% url 'subscriptions:new' %}">Inscrição</a></li>
             </ul>
         </nav>
 
