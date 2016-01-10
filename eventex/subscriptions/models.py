@@ -6,6 +6,7 @@ class Subscription(models.Model):
     cpf = models.CharField('CPF', max_length=11)
     email = models.EmailField('e-mail')
     phone = models.CharField('telefone', max_length=20)
+    paid = models.BooleanField('pago', default=False)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
 
     class Meta:
