@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     # thirty apps
     'test_without_migrations',
     'django_extensions',
+    'easy_mask',
     # my apps
     'eventex.core',
     'eventex.subscriptions.apps.SubscriptionsConfig',
