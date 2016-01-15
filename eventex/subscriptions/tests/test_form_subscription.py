@@ -13,12 +13,12 @@ class SubscriptionFormTest(TestCase):
     def test_cpf_is_digit(self):
         ''' CPF must only accept digits. '''
         form = self.make_validated_form(cpf='ABCD5678901')
-        self.assertFormErrorCode(form, 'cpf', 'digits')
+        self.assertFormErrorCode(form, 'cpf', None)
 
     def test_cpf_has_11_digits(self):
         ''' CPF must have 11 digits. '''
         form = self.make_validated_form(cpf='1234')
-        self.assertFormErrorCode(form, 'cpf', 'length')
+        self.assertFormErrorCode(form, 'cpf', 'min_length')
 
     def test_name_must_be_capitalized(self):
         ''' Name must be capitalized. '''
@@ -54,9 +54,9 @@ class SubscriptionFormTest(TestCase):
     def make_validated_form(self, **kwargs):
         valid = dict(
             name='Regis Da Silva',
-            cpf='12345678901',
+            cpf='71124336656',
             email='regis@example.com',
-            phone='11 91234-5678')
+            phone='11-91234-5678')
         data = dict(valid, **kwargs)
         form = SubscriptionForm(data)
         form.is_valid()

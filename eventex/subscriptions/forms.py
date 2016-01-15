@@ -1,22 +1,21 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from localflavor.br.forms import BRCPFField
+from localflavor.br.forms import BRCPFField, BRPhoneNumberField
 
 
 def validate_cpf(value):
     if not value.isdigit():
-        raise ValidationError('CPF deve conter apenas números.', 'digits')
+        raise ValidationError('CPF deve conter apenas números.', None)
 
     if len(value) != 11:
-        raise ValidationError('CPF deve ter 11 números.', 'length')
+        raise ValidationError('CPF deve ter 11 números.', 'min_length')
 
 
 class SubscriptionForm(forms.Form):
-    cpf = BRCPFField()
     name = forms.CharField(label='Nome')
-    # cpf = forms.CharField(label='CPF', max_length=11, validators=[validate_cpf])
+    cpf = BRCPFField(label='CPF', validators=[validate_cpf])
     email = forms.EmailField(label='Email', required=False)
-    phone = forms.CharField(label='Telefone', required=False)
+    phone = BRPhoneNumberField(label='Telefone', required=False)
 
     def clean_name(self):
         name = self.cleaned_data['name']

@@ -8,9 +8,9 @@ class SubscriptionModelTest(TestCase):
     def setUp(self):
         self.obj = Subscription(
             name='Regis Da Silva',
-            cpf='12345678901',
+            cpf='711.243.366-56',
             email='regis@example.com',
-            phone='11 91234-5678')
+            phone='11-91234-5678')
         self.obj.save()
 
     def test_create(self):

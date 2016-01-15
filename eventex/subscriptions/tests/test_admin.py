@@ -8,9 +8,9 @@ class SubscriptionModelAdminTest(TestCase):
     def setUp(self):
         Subscription.objects.create(
             name='Regis da Silva',
-            cpf='12345678901',
+            cpf='71124336656',
             email='regis@example.com',
-            phone='11 91234-5678')
+            phone='11-91234-5678')
         self.model_admin = SubscriptionModelAdmin(Subscription, admin.site)
 
     def test_has_action(self):

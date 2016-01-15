@@ -8,9 +8,9 @@ class SubscribeEmail(TestCase):
     def setUp(self):
         data = dict(
             name='Regis da Silva',
-            cpf='12345678901',
+            cpf='71124336656',
             email='regis@example.com',
-            phone='11 91234-5678',
+            phone='11-91234-5678',
         )
         self.client.post(r('subscriptions:new'), data)
         self.email = mail.outbox[0]
@@ -33,9 +33,9 @@ class SubscribeEmail(TestCase):
     def test_subscription_email_body(self):
         contents = [
             'Regis da Silva',
-            '12345678901',
+            '71124336656',
             'regis@example.com',
-            '11 91234-5678',
+            '11-91234-5678',
         ]
         for content in contents:
             with self.subTest():
