@@ -16,3 +16,10 @@ class SubscriptionForm(forms.Form):
                           validators=[validate_cpf])
     email = forms.EmailField(label='Email')
     phone = forms.CharField(label='Telefone')
+
+    def clean_name(self):
+        name = self.cleaned_data['name']
+        prepositions = ['da', 'de', 'di', 'do', 'du']
+        words = list(map(lambda w: w.capitalize()
+                         if not w in prepositions else w, name.split()))
+        return ' '.join(words)

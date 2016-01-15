@@ -1,43 +1,53 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- OVERVIEW -->
 <section>
-    <div class="content row padding-bottom-3 desktop-12 container">
-        <h2>Formulário de Inscrição</h2>
-        <div class="desktop-6">
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert success">
-                        <p>{{ message }}</p>
-                    </div>
-                {% endfor %}
-            {% endif %}
-            <form action="." method="post">
-                {% csrf_token %}
-                <div class="form-row label-block input-text">
-                    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-                    {{ form.name.errors }}
-                    {{ form.name }}
-                </div>
-                <div class="form-row label-block input-text">
-                    <label for="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}</label>
-                    {{ form.cpf.errors }}
-                    {{ form.cpf }}
-                </div>
-                <div class="form-row label-block input-text">
-                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
-                    {{ form.email.errors }}
-                    {{ form.email }}
-                </div>
-                <div class="form-row label-block input-text">
-                    <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
-                    {{ form.phone.errors }}
-                    {{ form.phone }}
-                </div>
-                <button type="submit" id="id_submit" class="btn btn-blue btn-effect" data-toggle="modal" data-target="#myModalMessage">Enviar</button>
-            </form>
+  <div class="content row padding-bottom-3 desktop-12 container">
+    <h2>Formulário de Inscrição</h2>
+    <div class="desktop-6">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert success">
+            <p>{{ message }}</p>
+          </div>
+        {% endfor %}
+      {% endif %}
+      <form action="." method="post">
+        {% csrf_token %}
+        <div class="form-row label-block input-text">
+          <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+          {{ form.name.errors }}
+          <input type="text" name="name" id="id_name" data-captalize>
         </div>
+        <div class="form-row label-block input-text">
+          <label for="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}</label>
+          {{ form.cpf.errors }}
+          {{ form.cpf }}
+        </div>
+        <div class="form-row label-block input-text">
+          <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+          {{ form.email.errors }}
+          {{ form.email }}
+        </div>
+        <div class="form-row label-block input-text">
+          <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
+          {{ form.phone.errors }}
+          {{ form.phone }}
+        </div>
+        <button type="submit" id="id_submit" class="btn btn-blue btn-effect" data-toggle="modal" data-target="#myModalMessage">Enviar</button>
+      </form>
     </div>
+  </div>
 </section>
+
+<script>
+    $('input').filter('[data-captalize]').keyup(function(k){
+      var split = this.value.split(' ');
+          for (var i = 0, len = split.length; i < len; i++) {
+              split[i] = split[i].charAt(0).toUpperCase() + split[i].slice(1).toLowerCase();
+          }
+          this.value = split.join(' ');
+    });
+</script>
+
 {% endblock content %}
