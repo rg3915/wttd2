@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'test_without_migrations',
     'django_extensions',
     'easy_mask',
+    'localflavor',
     # my apps
     'eventex.core',
     'eventex.subscriptions.apps.SubscriptionsConfig',

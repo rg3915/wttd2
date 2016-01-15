@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from localflavor.br.forms import BRCPFField
 
 
 def validate_cpf(value):
@@ -11,9 +12,9 @@ def validate_cpf(value):
 
 
 class SubscriptionForm(forms.Form):
+    cpf = BRCPFField()
     name = forms.CharField(label='Nome')
-    cpf = forms.CharField(label='CPF', max_length=11,
-                          validators=[validate_cpf])
+    # cpf = forms.CharField(label='CPF', max_length=11, validators=[validate_cpf])
     email = forms.EmailField(label='Email', required=False)
     phone = forms.CharField(label='Telefone', required=False)
 
