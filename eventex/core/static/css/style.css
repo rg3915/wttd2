@@ -12,3 +12,7 @@
     width: auto !important;
 }
 
+.speakers img {
+    width: 200px;
+    border-radius: 100%;
+}

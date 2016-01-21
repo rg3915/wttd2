@@ -1,24 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>    <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>     <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>     <html lang="en" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-    <head>
-    	<!-- meta character set -->
-        <meta charset="utf-8">
+  <head>
+  	<!-- meta character set -->
+    <meta charset="utf-8">
 		<!-- Always force latest IE rendering engine or request Chrome Frame -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Eventex</title>		
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Eventex</title>		
 		<!-- Meta Description -->
-        <meta name="description" content="Eventex">
-        <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
+    <meta name="description" content="Eventex">
+    <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
 		
 		<!-- Mobile Specific Meta -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
 		
 		<!-- CSS
 		================================================== -->
@@ -26,50 +26,50 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Fontawesome Icon font -->
-        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 		<!-- bootstrap.min -->
-        <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
 		<!-- bootstrap.min -->
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 		<!-- bootstrap.min -->
-        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
 		<!-- bootstrap.min -->
-        <link rel="stylesheet" href="{% static 'css/slit-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slit-slider.css' %}">
 		<!-- bootstrap.min -->
-        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-        <!-- Main Stylesheet -->
-        <link rel="stylesheet" href="{% static 'css/main_ini.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/main_ini.css' %}">
 		<!-- Style Stylesheet -->
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 		<!-- Modernizer Script for old Browsers -->
-        <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+    <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
-    </head>
+  </head>
 	
-    <body id="body">
+  <body id="body">
 
 		<!-- preloader -->
 		<div id="preloader">
-            <div class="loder-box">
-            	<div class="battery"></div>
-            </div>
+      <div class="loder-box">
+      	<div class="battery"></div>
+      </div>
 		</div>
 		<!-- end preloader -->
 
-        <!--
-        Fixed Navigation
-        ==================================== -->
-        <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- responsive nav button -->
+    <!--
+    Fixed Navigation
+    ==================================== -->
+    <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- responsive nav button -->
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-                    </button>
+          </button>
 					<!-- /responsive nav button -->
 					
 					<!-- logo -->
@@ -77,37 +77,38 @@
 						<a href="#body">Eventex</a>
 					</h1>
 					<!-- /logo -->
-                </div>
+        </div>
 
 				<!-- main nav -->
-                <nav class="collapse navbar-collapse navbar-right" role="navigation">
-                    <ul id="nav" class="nav navbar-nav">
-                        <li><a href="#about">Conferência</a></li>
-                        <li><a href="#sponsor">Patrocinadores</a></li>
-                        <!-- <li><a href="#portfolio">Eventos</a></li> -->
-                        <li><a href="#testimonials">Depoimentos</a></li>
-                        <!-- <li><a href="#price">Preço</a></li> -->
-                        <li><a href="#contact">Contato</a></li>
-                        <li><a href="#google-map">Local</a></li>
-                        <li><a href="#footer">Inscrição</a></li>
-                    </ul>
-                </nav>
+        <nav class="collapse navbar-collapse navbar-right" role="navigation">
+          <ul id="nav" class="nav navbar-nav">
+            <li><a href="#about">Conferência</a></li>
+            <li><a href="{% url 'core:home' %}#speakers">Palestrantes</a></li>
+            <li><a href="#sponsor">Patrocinadores</a></li>
+            <!-- <li><a href="#portfolio">Eventos</a></li> -->
+            <li><a href="#testimonials">Depoimentos</a></li>
+            <!-- <li><a href="#price">Preço</a></li> -->
+            <li><a href="#contact">Contato</a></li>
+            <li><a href="#google-map">Local</a></li>
+            <li><a href="#footer">Inscrição</a></li>
+          </ul>
+        </nav>
 				<!-- /main nav -->
 				
-            </div>
-        </header>
-        <!--
-        End Fixed Navigation
-        ==================================== -->
+      </div>
+    </header>
+    <!--
+    End Fixed Navigation
+    ==================================== -->
 		
 		<main class="site-content" role="main">
 		
-        <!--
-        Home Slider
-        ==================================== -->
+    <!--
+    Home Slider
+    ==================================== -->
 		
 		<section id="home-slider">
-            <div id="slider" class="sl-slider-wrapper">
+      <div id="slider" class="sl-slider-wrapper">
 
 				<div class="sl-slider">
 				
@@ -116,12 +117,12 @@
 						<div class="bg-img bg-img-0"></div>
 
 						<div class="slide-caption">
-                            <div class="caption-content">
-                                <h2 class="animated fadeInDown">Bem vindo ao Eventex!</h2>
-                                <span class="animated fadeInDown">Prazer em conhecê-lo</span>
-                                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
-                            </div>
-                        </div>
+              <div class="caption-content">
+                <h2 class="animated fadeInDown">Bem vindo ao Eventex!</h2>
+                <span class="animated fadeInDown">Prazer em conhecê-lo</span>
+                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
+              </div>
+            </div>
 						
 					</div>
 					
@@ -129,85 +130,85 @@
 					
 						<div class="bg-img bg-img-1"></div>
 						<div class="slide-caption">
-                            <div class="caption-content">
-                                <h2>Eventex</h2>
-                                <span>Conheça os maiores eventos do Brasil</span>
-                                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
-                            </div>
-                        </div>
+              <div class="caption-content">
+                <h2>Eventex</h2>
+                <span>Conheça os maiores eventos do Brasil</span>
+                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
+              </div>
+            </div>
 						
 					</div>
 					
-                    <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-                        
-                        <div class="bg-img bg-img-2"></div>
-                        <div class="slide-caption">
-                            <div class="caption-content">
-                                <h2>Supreenda-se</h2>
-                                <span>Surpreenda-se com nossas instalações.</span>
-                                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
-                            </div>
-                        </div>
+          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+            
+            <div class="bg-img bg-img-2"></div>
+            <div class="slide-caption">
+              <div class="caption-content">
+                <h2>Supreenda-se</h2>
+                <span>Surpreenda-se com nossas instalações.</span>
+                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
+              </div>
+            </div>
 
-                    </div>
+          </div>
 
-                    <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-                        
-                        <div class="bg-img bg-img-3"></div>
-                        <div class="slide-caption">
-                            <div class="caption-content">
-                                <h2>Ambientes para todos os gostos</h2>
-                                <span>Temos salas equipadas com todos os recursos tecnológicos.</span>
-                                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
-                            </div>
-                        </div>
+          <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+            
+            <div class="bg-img bg-img-3"></div>
+            <div class="slide-caption">
+              <div class="caption-content">
+                <h2>Ambientes para todos os gostos</h2>
+                <span>Temos salas equipadas com todos os recursos tecnológicos.</span>
+                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
+              </div>
+            </div>
 
-                    </div>
+          </div>
 
-                    <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-                        
-                        <div class="bg-img bg-img-4"></div>
-                        <div class="slide-caption">
-                            <div class="caption-content">
-                                <h2>Sinta-se em casa</h2>
-                                <span>Queremos que você se sinta em casa, totalmente confortável.</span>
-                                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
-                            </div>
-                        </div>
+          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+            
+            <div class="bg-img bg-img-4"></div>
+            <div class="slide-caption">
+              <div class="caption-content">
+                <h2>Sinta-se em casa</h2>
+                <span>Queremos que você se sinta em casa, totalmente confortável.</span>
+                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
+              </div>
+            </div>
 
-                    </div>
+          </div>
 
 					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
 						
 						<div class="bg-img bg-img-5"></div>
 						<div class="slide-caption">
-                            <div class="caption-content">
-                                <h2>Você Satisfeito</h2>
-                                <span>Nós sempre nos preocupamos com você</span>
-                                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
-                            </div>
-                        </div>
+              <div class="caption-content">
+                <h2>Você Satisfeito</h2>
+                <span>Nós sempre nos preocupamos com você</span>
+                <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Junte-se a nós</a>
+              </div>
+            </div>
 
 					</div>
 
 				</div><!-- /sl-slider -->
 
-                <!-- 
-                <nav id="nav-arrows" class="nav-arrows">
-                    <span class="nav-arrow-prev">Previous</span>
-                    <span class="nav-arrow-next">Next</span>
-                </nav>
-                -->
-                
-                <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
-                    <a href="javascript:;" class="sl-prev">
-                        <i class="fa fa-angle-left fa-3x"></i>
-                    </a>
-                    <a href="javascript:;" class="sl-next">
-                        <i class="fa fa-angle-right fa-3x"></i>
-                    </a>
-                </nav>
-                
+        <!-- 
+        <nav id="nav-arrows" class="nav-arrows">
+          <span class="nav-arrow-prev">Previous</span>
+          <span class="nav-arrow-next">Next</span>
+        </nav>
+        -->
+        
+        <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
+          <a href="javascript:;" class="sl-prev">
+            <i class="fa fa-angle-left fa-3x"></i>
+          </a>
+          <a href="javascript:;" class="sl-next">
+            <i class="fa fa-angle-right fa-3x"></i>
+          </a>
+        </nav>
+        
 
 				<nav id="nav-dots" class="nav-dots visible-xs visible-sm hidden-md hidden-lg">
 					<span class="nav-dot-current"></span>
@@ -218,9 +219,9 @@
 			</div><!-- /slider-wrapper -->
 		</section>
 		
-        <!--
-        End Home SliderEnd
-        ==================================== -->
+    <!--
+    End Home SliderEnd
+    ==================================== -->
 			
 			<!-- about section -->
 			<section id="about" >
@@ -245,99 +246,118 @@
 						<div class="col-md-7 col-md-offset-1 wow animated fadeInRight">
 							<div class="welcome-block">
 								<h3>A conferência</h3>								
-						     	 <div>
+						   	 <div>
 									<!-- <img src="" class="pull-left" alt="member"> -->
-						       		<p>A maior reunião de hackers do mundo.
-                                    Reunindo profissionais e entusiastas dos quatro cantos do planeta,
-                                    o Eventex é o lugar onde você precisa estar.</p>
-						     	 </div>
-						       	<a href="{% url 'subscriptions:new' %}" class="btn btn-border btn-effect pull-right">Garanta sua vaga!</a>
-						    </div>
+						     		<p>A maior reunião de hackers do mundo.
+                  Reunindo profissionais e entusiastas dos quatro cantos do planeta,
+                  o Eventex é o lugar onde você precisa estar.</p>
+						   	 </div>
+						     	<a href="{% url 'subscriptions:new' %}" class="btn btn-border btn-effect pull-right">Garanta sua vaga!</a>
+						  </div>
 						</div>
 					</div>
 				</div>
 			</section>
-            <!-- end about section -->
+      <!-- end about section -->
 
-			<!-- sponsor section -->
-            <section id="sponsor">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="sec-title text-center">
-                            <h2 class="wow animated bounceInRight">Patrocinadores</h2>
-                        </div>
-                        <h2 class="wow animated bounceInLeft">Gold</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="owl-carousel">
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn">
-                                    <img src="{% static 'img/partners/sponsor-gold-04.png' %}" alt="partners">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.3s">
-                                    <img src="{% static 'img/partners/sponsor-gold-01.png' %}" alt="partners">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.6s">
-                                    <img src="{% static 'img/partners/sponsor-gold-02.png' %}" alt="partners">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.9s">
-                                    <img src="{% static 'img/partners/sponsor-gold-03.png' %}" alt="partners">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn" data-wow-delay="1.2s">
-                                    <img src="{% static 'img/partners/sponsor-silver-06.png' %}" alt="partners">
-                                </div>
-                            </div>
-                        </div>
-                        <h2 class="wow animated bounceInRight">Silver</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="owl-carousel">
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn">
-                                    <img src="{% static 'img/partners/sponsor-silver-01.png' %}" alt="partners">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.3s">
-                                    <img src="{% static 'img/partners/sponsor-silver-02.png' %}" alt="partners">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.6s">
-                                    <img src="{% static 'img/partners/sponsor-silver-03.png' %}" alt="partners">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.9s">
-                                    <img src="{% static 'img/partners/sponsor-silver-04.png' %}" alt="partners">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="partner-logo wow animated zoomIn" data-wow-delay="1.2s">
-                                    <img src="{% static 'img/partners/sponsor-silver-05.png' %}" alt="partners">
-                                </div>
-                            </div>
-                        </div>
-                        <h2 class="wow animated zoomIn">Seja você também um patrocinador!</h2>
-                        <p class="wow animated zoomIn" data-wow-delay="0.3s">Interessado? Descubra as oportunidades e benefícios.</p>
-                        <a href="#contact" class="btn btn-blue btn-effect">Informe-se</a>
+      <!-- Speaker -->
+      <section id="speakers">
+          <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="speakers sec-title row container">
+                      <h2 class="wow animated bounceInRight">Palestrantes Convidados</h2>
+                      {% for speaker in speakers %}
+                          <div class="col-lg-6 wow animated zoomIn">
+                              <img src="{{ speaker.photo }}">
+                              <h4>{{ speaker.name }}</h4>
+                          </div>
+                      {% endfor %}
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+      </section>
+
+            <!-- sponsor section -->
+      <section id="sponsor">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="sec-title text-center">
+              <h2 class="wow animated bounceInRight">Patrocinadores</h2>
+            </div>
+            <h2 class="wow animated bounceInLeft">Gold</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="owl-carousel">
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn">
+                  <img src="{% static 'img/partners/sponsor-gold-04.png' %}" alt="partners">
+                </div>
+              </div>
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.3s">
+                  <img src="{% static 'img/partners/sponsor-gold-01.png' %}" alt="partners">
+                </div>
+              </div>
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.6s">
+                  <img src="{% static 'img/partners/sponsor-gold-02.png' %}" alt="partners">
+                </div>
+              </div>
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.9s">
+                  <img src="{% static 'img/partners/sponsor-gold-03.png' %}" alt="partners">
+                </div>
+              </div>
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn" data-wow-delay="1.2s">
+                  <img src="{% static 'img/partners/sponsor-silver-06.png' %}" alt="partners">
+                </div>
+              </div>
+            </div>
+            <h2 class="wow animated bounceInRight">Silver</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="owl-carousel">
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn">
+                  <img src="{% static 'img/partners/sponsor-silver-01.png' %}" alt="partners">
+                </div>
+              </div>
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.3s">
+                  <img src="{% static 'img/partners/sponsor-silver-02.png' %}" alt="partners">
+                </div>
+              </div>
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.6s">
+                  <img src="{% static 'img/partners/sponsor-silver-03.png' %}" alt="partners">
+                </div>
+              </div>
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn" data-wow-delay="0.9s">
+                  <img src="{% static 'img/partners/sponsor-silver-04.png' %}" alt="partners">
+                </div>
+              </div>
+              <div class="item">
+                <div class="partner-logo wow animated zoomIn" data-wow-delay="1.2s">
+                  <img src="{% static 'img/partners/sponsor-silver-05.png' %}" alt="partners">
+                </div>
+              </div>
+            </div>
+            <h2 class="wow animated zoomIn">Seja você também um patrocinador!</h2>
+            <p class="wow animated zoomIn" data-wow-delay="0.3s">Interessado? Descubra as oportunidades e benefícios.</p>
+            <a href="#contact" class="btn btn-blue btn-effect">Informe-se</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
 			
 			<!-- Service section -->
@@ -537,43 +557,43 @@
 									<span>75,00</span><br>
 								</div>
 								<ul>
-                                    <li>Apostila + Certificado</li>
-                                    <li>Coffee Break</li>
-                                    <li>Almoço</li>
-                                    <li>Camiseta</li>
-                                    <li><a href="#">Comprar</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4 wow animated fadeInUp" data-wow-delay="0.4s">
-                            <div class="price-table featured text-center">
-                                <span>Prata</span>
-                                <div class="value">
-                                    <span>R$</span>
-                                    <span>150,00</span><br>
-                                </div>
-                                <ul>
-                                    <li>Fretado</li>
-                                    <li>Apostila + Certificado</li>
-                                    <li>Coffee Break</li>
-                                    <li>Almoço</li>
-                                    <li><a href="#">Comprar</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4 wow animated fadeInUp" data-wow-delay="0.8s">
-                            <div class="price-table text-center">
-                                <span>Ouro</span>
-                                <div class="value">
-                                    <span>R$</span>
-                                    <span>250,00</span><br>
-                                </div>
-                                <ul>
-                                    <li>Fretado</li>
-                                    <li>Apostila + Certificado</li>
-                                    <li>Coffee Break + Almoço</li>
+                  <li>Apostila + Certificado</li>
+                  <li>Coffee Break</li>
+                  <li>Almoço</li>
+                  <li>Camiseta</li>
+                  <li><a href="#">Comprar</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="col-md-4 wow animated fadeInUp" data-wow-delay="0.4s">
+              <div class="price-table featured text-center">
+                <span>Prata</span>
+                <div class="value">
+                  <span>R$</span>
+                  <span>150,00</span><br>
+                </div>
+                <ul>
+                  <li>Fretado</li>
+                  <li>Apostila + Certificado</li>
+                  <li>Coffee Break</li>
+                  <li>Almoço</li>
+                  <li><a href="#">Comprar</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="col-md-4 wow animated fadeInUp" data-wow-delay="0.8s">
+              <div class="price-table text-center">
+                <span>Ouro</span>
+                <div class="value">
+                  <span>R$</span>
+                  <span>250,00</span><br>
+                </div>
+                <ul>
+                  <li>Fretado</li>
+                  <li>Apostila + Certificado</li>
+                  <li>Coffee Break + Almoço</li>
 									<li>Mezanino*</li>
 									<li><a href="#">Comprar</a></li>
 								</ul>
@@ -633,7 +653,7 @@
 								<div class="input-field">
 									<textarea name="message" class="form-control" placeholder="Mensagem..."></textarea>
 								</div>
-						       	<button type="submit" id="submit" class="btn btn-blue btn-effect" data-toggle="modal" data-target="#myModalMessage">Enviar</button>
+						     	<button type="submit" id="submit" class="btn btn-blue btn-effect" data-toggle="modal" data-target="#myModalMessage">Enviar</button>
 							<!-- </form> -->
 						</div>
 						
@@ -652,20 +672,20 @@
 			<!-- end Contact section -->
 			
 			<section id="google-map">
-                <div class="col-md-8">
+        <div class="col-md-8">
 					<div id="map-canvas"></div>
 				</div>
-                <div class="row">
-                    <div class="col-md-4">
-                    	<h2 class="wow animated fadeInRight">Bar Samba Caffé</h2>
-                    	<p class="wow animated fadeInRight" data-wow-delay="0.3s">Melhor que qualquer centro de convenções.</p>
-                        <p class="wow animated fadeInRight" data-wow-delay="0.6s">
-                            <i class="fa fa-2x fa-map-marker"></i>
-                            Rua do Ouvidor 23, Centro<br>
-                                Rio de Janeiro, RJ
-                            </p>
-                    </div>
-                </div>
+        <div class="row">
+          <div class="col-md-4">
+          	<h2 class="wow animated fadeInRight">Bar Samba Caffé</h2>
+          	<p class="wow animated fadeInRight" data-wow-delay="0.3s">Melhor que qualquer centro de convenções.</p>
+            <p class="wow animated fadeInRight" data-wow-delay="0.6s">
+              <i class="fa fa-2x fa-map-marker"></i>
+              Rua do Ouvidor 23, Centro<br>
+                Rio de Janeiro, RJ
+              </p>
+          </div>
+        </div>
 			</section>
 		
 		</main>
@@ -677,17 +697,17 @@
 						<!-- <p>Inscrição</p> -->
 						<!-- <p>Receba notícias sobre os próximos eventos!</p> -->
 					</div>
-                    <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Inscreva-se já</a>
+          <a href="{% url 'subscriptions:new' %}" class="btn btn-blue btn-effect">Inscreva-se já</a>
 					<!-- <form action="." method="POST" class="subscribe-form wow animated fadeInUp">
 						<div class="input-field">
 							{% csrf_token %}
-                            <input name="from_email" type="email" class="subscribe form-control" placeholder="Seu Email..."> -->
-                            <!-- Button trigger modal -->
-                            <!-- <button type="submit" class="submit-icon" data-toggle="modal" data-target="#myModal">
-                                <i class="fa fa-paper-plane fa-lg"></i>
-                            </button>
-                        </div>
-                    </form> -->
+              <input name="from_email" type="email" class="subscribe form-control" placeholder="Seu Email..."> -->
+              <!-- Button trigger modal -->
+              <!-- <button type="submit" class="submit-icon" data-toggle="modal" data-target="#myModal">
+                <i class="fa fa-paper-plane fa-lg"></i>
+              </button>
+            </div>
+          </form> -->
 					<div class="footer-social">
 						<ul>
 							<li class="wow animated zoomIn"><a href="https://www.facebook.com"><i class="fa fa-facebook fa-3x"></i></a></li>
@@ -704,66 +724,66 @@
 			</div>
 		</footer>
 
-    <!-- Modal Message -->
-    <div class="modal fade" id="myModalMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabelMessage">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Eventex.</h4>
-          </div>
-          <div class="modal-body">
-            <p>O envio de mensagens está temporariamente desativado.</p>
-            <p>Desculpe o transtorno.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
+  <!-- Modal Message -->
+  <div class="modal fade" id="myModalMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabelMessage">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title">Eventex.</h4>
+      </div>
+      <div class="modal-body">
+      <p>O envio de mensagens está temporariamente desativado.</p>
+      <p>Desculpe o transtorno.</p>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
       </div>
     </div>
+    </div>
+  </div>
 
-    <!-- Modal Subscribe -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Bem vindo ao Eventex.</h4>
-          </div>
-          <div class="modal-body">
-            <p>Inscrição realizada com sucesso.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
+  <!-- Modal Subscribe -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title">Bem vindo ao Eventex.</h4>
+      </div>
+      <div class="modal-body">
+      <p>Inscrição realizada com sucesso.</p>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
       </div>
     </div>
+    </div>
+  </div>
 
 
 		<!-- Essential jQuery Plugins
 		================================================== -->
 		<!-- Main jQuery -->
-        <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
 		<!-- Twitter Bootstrap -->
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 		<!-- Single Page Nav -->
-        <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
+    <script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
 		<!-- jquery.fancybox.pack -->
-        <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
 		<!-- Google Map API -->
 		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<!-- Owl Carousel -->
-        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-        <!-- jquery easing -->
-        <script src="{% static 'js/jquery.easing.min.js' %}"></script>
-        <!-- Fullscreen slider -->
-        <script src="{% static 'js/jquery.slitslider.js' %}"></script>
-        <script src="{% static 'js/jquery.ba-cond.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!-- jquery easing -->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <!-- Fullscreen slider -->
+    <script src="{% static 'js/jquery.slitslider.js' %}"></script>
+    <script src="{% static 'js/jquery.ba-cond.min.js' %}"></script>
 		<!-- onscroll animation -->
-        <script src="{% static 'js/wow.min.js' %}"></script>
-        <!-- Custom Functions -->
-        <script src="{% static 'js/main.js' %}"></script>
-        <!-- Custom Functions -->
-        <script src="{% static 'js/theme-scripts.js' %}"></script>
-    </body>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <!-- Custom Functions -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- Custom Functions -->
+    <script src="{% static 'js/theme-scripts.js' %}"></script>
+  </body>
 </html>
