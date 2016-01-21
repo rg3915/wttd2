@@ -83,6 +83,7 @@
         <nav class="collapse navbar-collapse navbar-right" role="navigation">
           <ul id="nav" class="nav navbar-nav">
             <li><a href="#about">Conferência</a></li>
+            <li><a href="#about">Palestras</a></li>
             <li><a href="{% url 'core:home' %}#speakers">Palestrantes</a></li>
             <li><a href="#sponsor">Patrocinadores</a></li>
             <!-- <li><a href="#portfolio">Eventos</a></li> -->
@@ -241,18 +242,26 @@
 										<p>O Python Day foi o último evento do ano realizado pelo Grupy-SP. Um dia inteiro de palestras e Lightning Talks sobre Python e suas influências.</p>
 									</div>
 								</div>
-							</div>
-						</div>
-						<div class="col-md-7 col-md-offset-1 wow animated fadeInRight">
-							<div class="welcome-block">
-								<h3>A conferência</h3>								
-						   	 <div>
-									<!-- <img src="" class="pull-left" alt="member"> -->
-						     		<p>A maior reunião de hackers do mundo.
+              </div>
+            </div>
+            <div class="col-md-7 col-md-offset-1 wow animated fadeInRight">
+              <div class="welcome-block">
+                <h3>A conferência</h3>                
+                 <div>
+                  <!-- <img src="" class="pull-left" alt="member"> -->
+                    <p>A maior reunião de hackers do mundo.
                   Reunindo profissionais e entusiastas dos quatro cantos do planeta,
                   o Eventex é o lugar onde você precisa estar.</p>
+                 </div>
+                  <a href="{% url 'subscriptions:new' %}" class="btn btn-border btn-effect pull-right">Garanta sua vaga!</a>
+              </div>
+            </div>
+						<div class="col-md-7 col-md-offset-1 wow animated fadeInRight">
+							<div class="welcome-block">
+								<h3>Palestras</h3>								
+						   	 <div>
 						   	 </div>
-						     	<a href="{% url 'subscriptions:new' %}" class="btn btn-border btn-effect pull-right">Garanta sua vaga!</a>
+						     	<a href="{% url 'talk_list' %}" class="btn btn-border btn-effect pull-left">Veja aqui as palestras</a>
 						  </div>
 						</div>
 					</div>
