@@ -12,4 +12,4 @@ dumpdata:
 	manage dumpdata --indent 4 subscriptions
 
 backup:
-	python manage.py dumpdata --format=json --indent=2 > fixtures.json
+	python manage.py dumpdata subscriptions --format=json --indent=2 > fixtures.json
