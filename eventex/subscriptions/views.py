@@ -1,9 +1,11 @@
+import json
 from django.conf import settings
 from django.contrib import messages
-from django.core import mail
+from django.core import mail, serializers
+from django.core.serializers.json import DjangoJSONEncoder
 from django.shortcuts import render, resolve_url as r
 from django.template.loader import render_to_string
-from django.http import HttpResponseRedirect, Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
 
@@ -49,3 +51,23 @@ def detail(request, pk):
 def _send_mail(subject, from_, to, template_name, context):
     body = render_to_string(template_name, context)
     mail.send_mail(subject, body, from_, [from_, to])
+
+
+def paid_list_json(request):
+    ''' JSON used to generate the graphic '''
+    ''' percent of paid '''
+    paid = Subscription.objects.filter(paid=True).count()
+    total = Subscription.objects.count()
+    paid_yes = int(paid * 100 / total)
+    paid_no = 100 - paid_yes
+    data = [{'label': 'Sim', 'value': paid_yes},
+            {'label': 'Não', 'value': paid_no},
+            ]
+
+    s = json.dumps(data, cls=DjangoJSONEncoder)
+    # s = serializers.serialize('json', data)
+    return HttpResponse(s)
+
+
+def graphic(request):
+    return render(request, 'subscriptions/graphic.html')

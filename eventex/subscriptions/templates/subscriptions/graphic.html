@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div id="donutchart" class="col-lg-6" style="min-width: 310px; max-width: 800px; height: 250px; margin: 0 auto"></div>
+{% endblock content %}
+
+{% block js %}
+  <script src="{% static 'js/graphics/data.js' %}"></script>
+{% endblock js %}
