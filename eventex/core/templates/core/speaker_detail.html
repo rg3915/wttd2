@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section>
+  <div class="speakers content row padding-bottom-3 desktop-8 container">
+    <h2><a href="{{ speaker.website }}">{{ speaker.name }}</a></h2>
+    <a href="{{ speaker.website }}"><img class="photo" src="{{ speaker.photo }}"></a>
+    <p>{{ speaker.description|linebreaks }}</p>
+  </div>
+</section>
+{% endblock content %}
