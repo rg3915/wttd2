@@ -9,10 +9,11 @@
         <nav class="nav-inline" role="navigation">
             <a href="javascript:void(0);" class="nav-mobile"><i class="fa fa-bars"></i></a>
             <ul>
-                <li><a data-scroll href="/#about">Conferência</a></li>
-                <li><a data-scroll href="/#sponsor">Patrocinadores</a></li>
-                <li><a data-scroll href="/#contact">Contato</a></li>
-                <li><a data-scroll href="/#google-map">Local</a></li>
+                <li><a data-scroll href="{% url 'home' %}#about">Conferência</a></li>
+                <li><a data-scroll href="{% url 'home' %}#speakers">Palestrantes</a></li>
+                <li><a data-scroll href="{% url 'home' %}#sponsor">Patrocinadores</a></li>
+                <li><a data-scroll href="{% url 'home' %}#contact">Contato</a></li>
+                <li><a data-scroll href="{% url 'home' %}#google-map">Local</a></li>
                 <li><a data-scroll href="{% url 'subscriptions:new' %}">Inscrição</a></li>
             </ul>
         </nav>
