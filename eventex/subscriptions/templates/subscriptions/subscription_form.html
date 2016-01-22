@@ -11,7 +11,7 @@
         <div class="form-row label-block input-text">
           <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
           {{ form.name.errors }}
-          <input type="text" name="name" id="id_name">
+          {{ form.name }}
         </div>
         <div class="form-row label-block input-text">
           <label for="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}</label>
@@ -33,6 +33,23 @@
     </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModalMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="color:#333">Eventex</h4>
+      </div>
+      <div class="modal-body">
+        {{ form.non_field_errors }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 $.fn.capitalize = function () {
@@ -62,6 +79,15 @@ $('#id_name').on('keyup', function () {
 $(document).ready(function(){
   $('#id_cpf').mask('000.000.000-00');
 });
+</script>
+
+<script>
+  $(document).ready(function () {
+    // Se apresentar a classe errorlist, significa que algum campo estava inválido e uma lista de erros foi renderizada
+    if ($('.errorlist').length > 0) {
+      $('#myModalMessage').modal('show');
+    }
+  });
 </script>
 
 {% endblock content %}
