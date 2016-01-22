@@ -1,11 +1,10 @@
 import json
 from django.conf import settings
 from django.contrib import messages
-from django.core import mail, serializers
-from django.core.serializers.json import DjangoJSONEncoder
+from django.core import mail
 from django.shortcuts import render, resolve_url as r
 from django.template.loader import render_to_string
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import HttpResponse, HttpResponseRedirect, Http404, JsonResponse
 from eventex.subscriptions.forms import SubscriptionForm
 from eventex.subscriptions.models import Subscription
 
@@ -64,9 +63,8 @@ def paid_list_json(request):
             {'label': 'Não', 'value': paid_no},
             ]
 
-    s = json.dumps(data, cls=DjangoJSONEncoder)
-    # s = serializers.serialize('json', data)
-    return HttpResponse(s)
+    resp = JsonResponse(data, safe=False)
+    return HttpResponse(resp.content)
 
 
 def graphic(request):

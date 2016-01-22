@@ -11,7 +11,7 @@
         <div class="form-row label-block input-text">
           <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
           {{ form.name.errors }}
-          <input type="text" name="name" id="id_name" data-captalize>
+          <input type="text" name="name" id="id_name">
         </div>
         <div class="form-row label-block input-text">
           <label for="{{ form.cpf.id_for_label }}">{{ form.cpf.label }}</label>
@@ -35,13 +35,27 @@
 </section>
 
 <script>
-    $('input').filter('[data-captalize]').keyup(function(k){
-      var split = this.value.split(' ');
-          for (var i = 0, len = split.length; i < len; i++) {
-              split[i] = split[i].charAt(0).toUpperCase() + split[i].slice(1).toLowerCase();
-          }
-          this.value = split.join(' ');
+$.fn.capitalize = function () {
+  var wordsToIgnore = ["da","de","di","do", "du"],
+      minLength = 2;
+  function getWords(str) {
+    return str.match(/\S+\s*/g);
+  }
+  this.each(function () {
+    var words = getWords(this.value);
+    $.each(words,function(i,word) {
+      // only continue if word is not in ignore list
+      if (wordsToIgnore.indexOf($.trim(word)) == -1 && $.trim(word).length > minLength) {
+        words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+      }
     });
+    this.value = words.join("");
+  });
+};
+
+$('#id_name').on('keyup', function () {
+  $(this).capitalize();
+}).capitalize();
 </script>
 
 {% endblock content %}
