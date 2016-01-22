@@ -1,3 +1,4 @@
+from daterange_filter.filter import DateRangeFilter
 from django.contrib import admin
 from django.utils.timezone import now
 from eventex.subscriptions.models import Subscription
@@ -8,7 +9,7 @@ class SubscriptionModelAdmin(admin.ModelAdmin):
                     'subscribed_today', 'paid')
     date_hierarchy = 'created_at'
     search_fields = ('name', 'email', 'phone', 'cpf', 'created_at')
-    list_filter = ('paid', 'created_at')
+    list_filter = ('paid', 'created_at', ('created_at', DateRangeFilter),)
 
     actions = ['mark_as_paid']
 

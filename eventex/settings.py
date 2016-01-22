@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'easy_mask',
     'localflavor',
+    'daterange_filter',
     # my apps
     'eventex.core',
     'eventex.subscriptions.apps.SubscriptionsConfig',
