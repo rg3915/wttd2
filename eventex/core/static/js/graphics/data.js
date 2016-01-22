@@ -2,7 +2,7 @@
 var json = function(callback){
 var json = null;
 $.ajax({
-  url: "/inscricao/json/",
+  url: "/inscricao/json/donut/",
   type: 'GET',
   dataType: 'json',
   success: function (data) {
