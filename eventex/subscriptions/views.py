@@ -1,6 +1,7 @@
 import json
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core import mail
 from django.shortcuts import render, resolve_url as r
 from django.template.loader import render_to_string
@@ -54,7 +55,7 @@ def _send_mail(subject, from_, to, template_name, context):
 
 def paid_list_json(request):
     ''' JSON used to generate the graphic '''
-    ''' percent of paid '''
+    ''' Percent of paid '''
     paid = Subscription.objects.filter(paid=True).count()
     total = Subscription.objects.count()
     paid_yes = int(paid * 100 / total)
@@ -67,5 +68,19 @@ def paid_list_json(request):
     return HttpResponse(resp.content)
 
 
+def paid_column_json(request):
+    ''' JSON used to generate the graphic '''
+    ''' Quantity of paid '''
+    paid_yes = Subscription.objects.filter(paid=True).count()
+    paid_no = Subscription.objects.filter(paid=False).count()
+    data = [{'label': 'Sim', 'value': paid_yes},
+            {'label': 'Não', 'value': paid_no},
+            ]
+
+    resp = JsonResponse(data, safe=False)
+    return HttpResponse(resp.content)
+
+
+@login_required
 def graphic(request):
     return render(request, 'subscriptions/graphic.html')

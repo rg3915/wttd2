@@ -2,9 +2,34 @@
 {% load static %}
 
 {% block content %}
-  <div id="donutchart" class="col-lg-6" style="min-width: 310px; max-width: 800px; height: 250px; margin: 0 auto"></div>
+
+<style>
+.graph {min-width: 310px; max-width: 800px; height: 250px; margin: 0 auto}
+</style>
+
+<div class="col-lg-6">
+  <div class="panel panel-default">
+      <div class="panel-heading lead">
+          Pagos em %
+      </div>
+      <div class="panel-body">
+          <div id="donutchart" class="graph"></div>
+      </div>
+  </div>
+</div>
+<div class="col-lg-6">
+  <div class="panel panel-default">
+      <div class="panel-heading lead">
+          Pagos em Quantidade
+      </div>
+      <div class="panel-body">
+          <div id="columnchart" class="graph"></div>
+      </div>
+  </div>
+</div>
 {% endblock content %}
 
 {% block js %}
   <script src="{% static 'js/graphics/data.js' %}"></script>
+  <script src="{% static 'js/graphics/columnchart.js' %}"></script>
 {% endblock js %}
