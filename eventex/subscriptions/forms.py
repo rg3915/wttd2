@@ -25,6 +25,7 @@ class SubscriptionFormOld(forms.Form):
 
 
 class SubscriptionForm(forms.ModelForm):
+    cpf = BRCPFField(label='CPF', max_length=15)
 
     class Meta:
         model = Subscription
@@ -36,6 +37,11 @@ class SubscriptionForm(forms.ModelForm):
         words = list(map(lambda w: w.capitalize()
                          if not w in prepositions else w, name.split()))
         return ' '.join(words)
+
+    def clean_cpf(self):
+        cpf = self.cleaned_data['cpf']
+        cpf = cpf[:3] + cpf[4:7] + cpf[8:11] + cpf[12:]
+        return ''.join(cpf)
 
     def clean(self):
         self.cleaned_data = super().clean()

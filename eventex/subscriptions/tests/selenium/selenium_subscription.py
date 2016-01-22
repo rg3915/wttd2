@@ -14,8 +14,11 @@ email = '{}.{}@example.com'.format(first_name[0].lower(), last_name.lower())
 
 
 page = webdriver.Firefox()
+page.maximize_window()
+time.sleep(0.5)
 # page = webdriver.Chrome(executable_path='/home/rg3915/Downloads/chromedriver')
 page.get('http://localhost:8000/inscricao/')
+time.sleep(0.5)
 
 fields = [['id_name', name],
           ['id_cpf', gen_cpf()],
