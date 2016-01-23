@@ -1,5 +1,4 @@
 -r requirements.txt
 ipython[notebook]
 names==0.3.0
-rstr==2.2.3
 selenium==2.48.0

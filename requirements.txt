@@ -7,6 +7,7 @@ django-localflavor==1.2
 django-test-without-migrations==0.4
 easy-mask==1.2.3
 python-decouple==3.0
+requests==2.9.1
 static3==0.6.1
 gunicorn==19.4.1
 psycopg2==2.6.1
