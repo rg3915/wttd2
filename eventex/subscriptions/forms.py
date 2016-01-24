@@ -20,9 +20,7 @@ class SubscriptionForm(forms.ModelForm):
         return ' '.join(words)
 
     def clean_cpf(self):
-        cpf = self.cleaned_data['cpf']
-        cpf = cpf[:3] + cpf[4:7] + cpf[8:11] + cpf[12:]
-        return ''.join(cpf)
+        return self.cleaned_data['cpf'].replace('.', '').replace('-', '') if self.cleaned_data['cpf'] else self.cleaned_data['cpf']
 
     def clean(self):
         self.cleaned_data = super().clean()
