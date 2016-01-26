@@ -77,6 +77,12 @@ python manage.py graph_models -e -g -l dot -o core.png core
 python manage.py graph_models -a -g -o eventex.png
 ```
 
+![core](core.png)
+
+![eventex](eventex.png)
+
+
+
 [0]: www.welcometothedjango.com.br
 [1]: henriquebastos.net
 [3]: https://github.com/rg3915/wttd2/tree/master/python_ex
