@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.core.exceptions import ValidationError
 from django.test import TestCase
 from eventex.core.models import Speaker, Contact

@@ -61,6 +61,7 @@ target/
 *.DS_Store
 
 .wttd2/
+.venv/
 perguntas_e_respostas
 staticfiles/
 .ipynb_checkpoints/

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 from eventex.core.models import Speaker, Contact, Talk, Course
 

@@ -58,6 +58,25 @@ heroku config:set DEBUG=False
 git push heroku master --force
 ```
 
+## Modelo Gráfico
+
+```bash
+virtualenv -p python2.7 .venv
+source .venv/bin/activate
+pip install -r requirements-dev.txt
+
+sudo apt-get install graphviz libgraphviz-dev pkg-config
+pip install pygraphviz pyparsing
+
+pip uninstall pyparsing
+pip install -Iv https://pypi.python.org/packages/source/p/pyparsing/pyparsing-1.5.7.tar.gz#md5=9be0fcdcc595199c646ab317c1d9a709
+pip install pydot
+
+python manage.py graph_models -e -g -l dot -o core.png core
+
+python manage.py graph_models -a -g -o eventex.png
+```
+
 [0]: www.welcometothedjango.com.br
 [1]: henriquebastos.net
 [3]: https://github.com/rg3915/wttd2/tree/master/python_ex
