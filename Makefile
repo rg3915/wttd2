@@ -5,6 +5,12 @@ migrate:
 test:
 	python manage.py test -n
 
+heroku_push:
+	git push heroku master --force
+
+heroku_migrate:
+	heroku run python manage.py migrate
+
 selenium_subscription:
 	python eventex/subscriptions/tests/selenium/selenium_subscription.py
 
