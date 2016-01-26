@@ -70,6 +70,5 @@ def talk_list(request):
     context = {
         'morning_talks': Talk.objects.at_morning(),
         'afternoon_talks': Talk.objects.at_afternoon(),
-        'courses': Course.objects.all(),
     }
     return render(request, 'core/talk_list.html', context)
