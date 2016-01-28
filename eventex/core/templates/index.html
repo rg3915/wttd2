@@ -276,7 +276,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="speakers sec-title row container">
                       <h2 class="wow animated bounceInRight">Palestrantes Convidados</h2>
-                      {% for speaker in speakers %}
+                      {% for speaker in speaker_list %}
                           <div class="col-lg-6 wow animated zoomIn">
                               <a href="{{ speaker.get_absolute_url }}"><img src="{{ speaker.photo }}"></a>
                               <h4><a href="{{ speaker.get_absolute_url }}">{{ speaker.name }}</a></h4>

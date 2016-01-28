@@ -1,36 +1,16 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import View
+from django.views.generic import TemplateView, ListView, DetailView
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from eventex.core.models import Speaker, Talk, Course
 
 
-class GenericHomeView(View):
-    template_name = None
-    object_list = None
-    context_object_name = None
+home = ListView.as_view(template_name='index.html', model=Speaker)
 
-    def get(self, *args, **kwargs):
-        context = self.get_context_data()
-        return self.render_to_response(context)
+speaker_detail = DetailView.as_view(model=Speaker)
 
-    def render_to_response(self, context):
-        return render(self.request, self.template_name, context)
+talk_list = ListView.as_view(model=Talk)
 
-    def get_context_data(self, **kwargs):
-        context = {self.context_object_name: self.object_list}
-        context.update(kwargs)
-        return context
-
-
-class HomeView(GenericHomeView):
-    template_name = 'index.html'
-    object_list = Speaker.objects.all()
-    context_object_name = 'speakers'
-
-
-def bubble(request):
-    return render(request, 'bubble.html')
+bubble = TemplateView.as_view(template_name='bubble.html')
 
 
 def subscribe(request):
@@ -79,16 +59,3 @@ def sendemail(request):
             return HttpResponseRedirect('/')
         else:
             return HttpResponse('Certifique-se de todos os campos estão inseridos e válidos.')
-
-
-def speaker_detail(request, slug):
-    speaker = get_object_or_404(Speaker, slug=slug)
-    return render(request, 'core/speaker_detail.html', {'speaker': speaker})
-
-
-def talk_list(request):
-    context = {
-        'morning_talks': Talk.objects.at_morning(),
-        'afternoon_talks': Talk.objects.at_afternoon(),
-    }
-    return render(request, 'core/talk_list.html', context)
