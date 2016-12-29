@@ -1,3 +1,6 @@
+install:
+	pip install -r requirements/dev.txt
+
 migrate:
 	python manage.py makemigrations
 	python manage.py migrate

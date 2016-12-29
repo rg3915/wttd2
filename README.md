@@ -31,7 +31,7 @@ git clone https://github.com/rg3915/wttd2.git
 cd wttd2
 python -m venv .wttd2
 source .wttd2/bin/activate # Linux
-pip install -r requirements-dev.txt
+make install
 cp contrib/env-sample .env
 python manage.py test
 ```
