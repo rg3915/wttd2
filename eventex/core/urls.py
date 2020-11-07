@@ -1,8 +1,12 @@
-from django.conf.urls import include, url
+from django.urls import include, path
 from eventex.core.views import home, bubble, sendemail
 
+
+app_name = 'core'
+
+
 urlpatterns = [
-    url(r'^$', home, name='home'),
-    url(r'^bubble/$', bubble, name='bubble'),
-    url(r'^email/$', sendemail, name='sendemail'),
+    path('', home, name='home'),
+    path('bubble/', bubble, name='bubble'),
+    path('email/', sendemail, name='sendemail'),
 ]
